@@ -13,7 +13,7 @@ def ligne_valide(ligne):
 
 def lire_log_data(log_data):
     fichiers_csv=[]
-    ##acceder au dossier log_data
+    ##acceder au dossier log_data/
     liste = os.listdir(log_data)
     ##parcourir le dossier pour trouver les fichier .csv
     for fichier in liste:
@@ -43,7 +43,6 @@ def valid_ligne(fichier_csv):
                 if len(donnees) != 6:
                     print(f" ligne incorrect: {ligne}")
                     linvalide.append(ligne)
-                    linvalide.append(ligne)
 
                     continue
                 else:
@@ -61,7 +60,7 @@ def valid_ligne(fichier_csv):
                             "methode": methode,
                             "code": code,
                             "temps": temps,
-                            "url": url 
+                            "url": url
                             #"fichier" :"fichier_a.csv"
                         }
 
@@ -70,5 +69,5 @@ def valid_ligne(fichier_csv):
                         print("La valeur est incorrecte sur une ligne")
             return linvalide ,lvalide
             
-
+   
 

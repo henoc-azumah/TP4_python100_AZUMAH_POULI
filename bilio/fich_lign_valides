@@ -1,0 +1,40 @@
+##le fichier contenant le plus de lignes valides
+import os
+import csv
+
+def ligne_valide(ligne):
+   for valeur in ligne.values():
+        if valeur is None or valeur.strip() == "":
+            return False
+        return True
+   
+def nbr_de_ligne(log_data):
+    nbfichiers_csv=[]
+    resultat ={}
+    nbre = 0
+    ##acceder au dossier log_data/
+    liste = os.listdir(log_data)
+    ##parcourir le dossier pour trouver les fichier .csv
+    for fichier in liste:
+        if fichier.endswith(".csv"):
+         print(fichier)
+         chemin = os.path.join(log_data, fichier)
+         with open(chemin,"r",encoding="utf-8")as f:
+            contenu = csv.DictReader(f)
+            for ligne in contenu:
+               if ligne_valide(ligne):
+                 nbre+=1
+        resultat[fichier]=nbre
+        nbfichiers_csv.append(fichier)
+     # Le plus volumineux
+    if resultat:
+        plus_grand = max(resultat, key=resultat.get)
+        print(f"\nLe plus volumineux : {plus_grand} ({resultat[plus_grand]} lignes)")
+     # Total
+    print(f"Total : {sum(resultat.values())} lignes traitées")
+    for fichier, nb in resultat.items():
+        print(f"{fichier} : {nb} lignes valides")
+    return resultat
+
+if __name__ == "__main__":
+    nbr_de_ligne("log_data")
