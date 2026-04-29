@@ -1,0 +1,52 @@
+===== RAPPORT D'ANALYSE =====
+
+---- STATISTIQUES GLOBALES ----
+Total requêtes : 3151
+GET : 1597
+POST : 1520
+Erreurs : 677
+Temps moyen : 400.86 ms
+
+---- REQUETES PAR CODE HTTP ----
+502 : 175
+400 : 179
+503 : 210
+302 : 157
+404 : 336
+401 : 193
+200 : 351
+408 : 137
+500 : 341
+429 : 116
+301 : 194
+204 : 212
+201 : 208
+202 : 152
+403 : 185
+9999 : 4
+-1 : 1
+
+---- SECURITE ----
+Top 3 IP les plus actives :
+192.168.1.10 : 317 requêtes
+192.168.1.11 : 165 requêtes
+192.168.1.27 : 15 requêtes
+
+---- ANALYSE AVANCEE ----
+Top 5 URLs :
+/login : 839
+/dashboard : 274
+/profile : 254
+/logout : 136
+/api/data?id=5 : 122
+
+Requête la plus lente :
+{'date': '2026-03-01 25:99:99', 'ip': '192.168.1.37', 'methode': 'GET', 'code': 502, 'temps': 1191, 'url': '/contact'}
+
+Fichier avec le plus de lignes valides :
+/login
+
+---- RESUME PAR FICHIER ----
+log_1.csv : {'lues': 57, 'valides': 44, 'invalides': 13, 'erreurs': 11, 'temps_moyen': 175.88636363636363}
+log_2.csv : {'lues': 5373, 'valides': 2506, 'invalides': 2867, 'erreurs': 521, 'temps_moyen': 442.8132482043097}
+log_3.csv : {'lues': 1291, 'valides': 601, 'invalides': 690, 'erreurs': 145, 'temps_moyen': 242.37271214642263}
